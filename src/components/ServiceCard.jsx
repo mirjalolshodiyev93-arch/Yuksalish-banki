@@ -1,29 +1,50 @@
-import { CreditCard, Landmark, PiggyBank, RefreshCcw } from "lucide-react";
 
-export default function servicesData() {
+import { CreditCard, Landmark, PiggyBank, RefreshCcw } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
+import React, { useEffect, useState } from 'react';
+
+export default function ServicesData() {
+  const { t, i18n } = useTranslation();
+  const [scrolled, setScrolled] = useState(false);
+
   const services = [
     {
       icon: <CreditCard size={28} />,
-      title: "Plastik kartalar",
-      desc: "Barcha turdagi xalqaro Visa/Mastercard va milliy Humo/Uzcard kartalari.",
+      title: t("services1.plasticCards.title"),
+      desc: t("services1.plasticCards.desc"),
     },
     {
       icon: <Landmark size={28} />,
-      title: "Kreditlar",
-      desc: "Imtiyozli foiz stavkalari va tezkor rasmiylashtirish bilan mikroqarzlar.",
+      title: t("services1.loans.title"),
+      desc: t("services1.loans.desc"),
       active: true,
     },
     {
       icon: <PiggyBank size={28} />,
-      title: "Omonatlar",
-      desc: "Mablag'laringizni ishonchli va yuqori daromad bilan ko'paytiring.",
+      title: t("services1.deposits.title"),
+      desc: t("services1.deposits.desc"),
     },
     {
       icon: <RefreshCcw size={28} />,
-      title: "Valyuta",
-      desc: "Eng foydali kurslarda 24/7 onlayn valyuta ayirboshlash xizmati.",
+      title: t("services1.currency.title"),
+      desc: t("services1.currency.desc"),
     },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem("lang", lang);
+  };
 
   return (
     <section className="bg-[#0B1F3B] py-20 text-white">
@@ -31,7 +52,7 @@ export default function servicesData() {
         
         {/* Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold">Bizning xizmatlar</h2>
+          <h2 className="text-4xl font-bold">{t("salom.home")}</h2>
           <div className="w-20 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
@@ -46,7 +67,7 @@ export default function servicesData() {
                   : "bg-[#0F2746] border-white/10 hover:border-blue-400"
               }`}
             >
-              <div
+              <div  onClick={() => navigate('/credits')}
                 className={`w-14 h-14 flex items-center justify-center rounded-xl mb-6 transition-all duration-300 ${
                   item.active
                     ? "bg-green-600/20 text-green-400"
@@ -56,16 +77,16 @@ export default function servicesData() {
                 {item.icon}
               </div>
 
-              <h3 className="text-xl font-semibold mb-4">
+              <h3 className=" text-xl font-semibold mb-4">
                 {item.title}
               </h3>
 
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <p className= " max-w-md break-words line-clamp-2 text-gray-400 mb-6 leading-relaxed">
                 {item.desc}
               </p>
 
               <button className="text-blue-400 flex items-center gap-2 hover:gap-3 transition-all">
-                Batafsil →
+                {t("buttons.moreDetails")}
               </button>
             </div>
           ))}

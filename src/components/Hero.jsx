@@ -1,26 +1,45 @@
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
 export default function Hero() {
+  const { t, i18n } = useTranslation();
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        setScrolled(window.scrollY > 50);
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+  
+    const changeLanguage = (lang) => {
+      i18n.changeLanguage(lang);
+      localStorage.setItem("lang", lang);
+    };
+  
   return (
-    <section className="  max-w-[1400px] m-auto bg-gradient-to-r from-[#0B1F3B] to-green-700 text-white px-10 py-20 flex items-center justify-between">
+    <section className="  max-w-[1400px] m-auto bg-gradient-to-r from-[#0B1F3B] to-green-700 text-white px-10 py-20 flex items-center justify-between pt-[120px]">
 
       <div>
 
 
         <h1 className="text-5xl font-bold leading-tight bg-gradient-to-r from-white via-green-400 to-white bg-clip-text text-transparent">
-          Ishonch, Xavfsizlik, <br />
-          <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">O‘sish</span>
+          {t("hero.title")} <br />
+          <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">{t("hero.subtitle")} </span>
         </h1>
 
         <p className="mt-6 text-gray-300 max-w-md">
-          Lodo Bank bilan moliyaviy kelajagingizni ishonch bilan quring.
+         {t("hero.desc")} 
         </p>
 
         <div className="mt-8 space-x-4">
           <button className="bg-green-500 px-6 py-3 rounded-xl font-semibold hover:bg-green-600 transition">
-            Hisob ochish
+            {t("hero.button")} 
           </button>
 
           <button className="border border-white px-6 py-3 rounded-xl hover:bg-white hover:text-black transition">
-            Batafsil
+           {t("hero.button1")} 
           </button>
         </div>
       </div>

@@ -1,0 +1,73 @@
+{
+
+
+  "services1": {
+    "plasticCards": {
+      "title": "Plastic cards",
+      "desc": "Fast and secure plastic card services."
+    },
+    "loans": {
+      "title": "Loans",
+      "desc": "Microloans with preferential interest rates and quick processing."
+    },
+    "deposits": {
+      "title": "Deposits",
+      "desc": "Increase your funds safely with high returns."
+    },
+    "currency": {
+      "title": "Currency",
+      "desc": "24/7 online currency exchange at the best rates."
+    }
+  },
+  "buttons": {
+    "moreDetails": "More details →"
+  },
+
+  "salom" :{
+   "home": "Our services"
+  },
+  "navbar": {
+    "home": "Home",
+    "kredit": "Loan",
+
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact",
+    "login": "Login"
+  },
+  
+  "stats": {
+    "clients": "Clients",
+    "branches": "Branches",
+    "experience": "Years of Experience",
+    "service": "Service"
+  },
+
+  "hero": {
+    "desc": "Build your financial future with confidence with Lodo Bank.",
+    "title": "Trust, Security,",
+    "subtitle": "Growth",
+    "button": "Open Account",
+    "button1": "Learn More"
+  },
+  "services": {
+    "title": "Our Services",
+    "card1": {
+      "title": "Online Loan",
+      "desc": "Fast and convenient loan access"
+    },
+    "card2": {
+      "title": "Plastic Cards",
+      "desc": "Visa and Mastercard cards"
+    },
+    "card3": {
+      "title": "Money Transfers",
+      "desc": "International and local transfers"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  }
+}

@@ -1,7 +1,8 @@
-export const statsData = [
-  { id: 1, value: "1M+", label: "Mijozlar" },
-  { id: 2, value: "120+", label: "Filiallar" },
-  { id: 3, value: "15+", label: "Yillik tajriba" },
-  { id: 4, value: "24/7", label: "Xizmat" },
-];
+import { useTranslation } from "react-i18next";
 
+export const getStatsData = (t) => [
+  { id: 1, value: "1M+", label: t("stats.clients") },
+  { id: 2, value: "120+", label: t("stats.branches") },
+  { id: 3, value: "15+", label: t("stats.experience") },
+  { id: 4, value: "24/7", label: t("stats.service") },
+];

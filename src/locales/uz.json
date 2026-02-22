@@ -1,0 +1,67 @@
+{
+  "services1": {
+    "plasticCards": {
+      "title": "Plastik kartalar",
+      "desc": "Tez va xavfsiz plastik kartalar xizmatlari."
+    },
+    "loans": {
+      "title": "Kreditlar",
+      "desc": "Imtiyozli foiz stavkalari va tezkor rasmiylashtirish bilan mikroqarzlar."
+    },
+    "deposits": {
+      "title": "Omonatlar",
+      "desc": "Mablag'laringizni ishonchli va yuqori daromad bilan ko'paytiring."
+    },
+    "currency": {
+      "title": "Valyuta",
+      "desc": "Eng foydali kurslarda 24/7 onlayn valyuta ayirboshlash xizmati."
+    }
+  },
+  "buttons": {
+    "moreDetails": "Batafsil →"
+  },
+  "salom": {
+    "home": "Bizning xizmatlar"
+  },
+  "navbar": {
+    "home": "Bosh sahifa",
+    "services": "Xizmatlar",
+    "about": "Biz haqimizda",
+    "contact": "Aloqa",
+    "kredit":"Kredit",
+    "login": "Kirish"
+  },
+  "stats": {
+    "clients": "Mijozlar",
+    "branches": "Filiallar",
+    "experience": "Yillik tajriba",
+    "service": "Xizmat"
+  },
+  "hero": {
+    "desc": " Lodo Bank bilan moliyaviy kelajagingizni ishonch bilan quring.",
+    "title": " Ishonch, Xavfsizlik,",
+    "subtitle": "O‘sish",
+    "button": "Hisob ochish",
+    "button1": "  Batafsil"
+  },
+  "services": {
+    "title": "Bizning xizmatlar",
+    "card1": {
+      "title": "Onlayn kredit",
+      "desc": "Tez va qulay kredit olish imkoniyati"
+    },
+    "card2": {
+      "title": "Plastik kartalar",
+      "desc": "Visa va Mastercard kartalari"
+    },
+    "card3": {
+      "title": "Pul o‘tkazmalari",
+      "desc": "Xalqaro va mahalliy o‘tkazmalar"
+    }
+  },
+  "footer": {
+    "rights": "Barcha huquqlar himoyalangan",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari"
+  }
+}
