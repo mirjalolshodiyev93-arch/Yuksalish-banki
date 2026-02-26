@@ -6,13 +6,23 @@ export default function Stats() {
   const stats = getStatsData(t);
 
   return (
-    <div className=" max-w-[1400px] m-auto bg-[#081726] text-white py-10 grid grid-cols-4 text-center">
+    <div className="max-w-[1400px] mx-auto bg-slate-300 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
       {stats.map((stat) => (
-        <div key={stat.id} className="text-center">
-          <h3 className="text-3xl font-bold text-green-400">{stat.value}</h3>
-          <p className="text-gray-600">{stat.label}</p>
+        <div
+          key={stat.id}
+          className="p-6 rounded-2xl hover:shadow-lg transition"
+        >
+          <h3 className="text-3xl font-bold text-green-600">
+            {stat.value}
+          </h3>
+
+          <p className="text-gray-600 mt-2">
+            {stat.label}
+          </p>
         </div>
       ))}
+
     </div>
   );
 }

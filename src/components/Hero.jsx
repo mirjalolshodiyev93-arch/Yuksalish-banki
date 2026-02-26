@@ -1,54 +1,130 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Hero() {
   const { t, i18n } = useTranslation();
-  
-    useEffect(() => {
-      const handleScroll = () => {
-        setScrolled(window.scrollY > 50);
-      };
-  
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-  
-    const changeLanguage = (lang) => {
-      i18n.changeLanguage(lang);
-      localStorage.setItem("lang", lang);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
     };
-  
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem("lang", lang);
+  };
+
+  const Chip = () => (
+    <div className="w-14 h-10 rounded-lg bg-gradient-to-br from-yellow-300 to-yellow-600 
+                  shadow-inner relative overflow-hidden">
+
+      {/* Chip ichki chiziqlar */}
+      <div className="absolute inset-1 border-2 border-yellow-800 rounded-md"></div>
+
+      <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-yellow-800 -translate-x-1/2"></div>
+      <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-yellow-800 -translate-y-1/2"></div>
+
+      <div className="absolute top-2 left-2 right-2 h-[2px] bg-yellow-800"></div>
+      <div className="absolute bottom-2 left-2 right-2 h-[2px] bg-yellow-800"></div>
+    </div>
+  );
+
+
   return (
-    <section className="  max-w-[1400px] m-auto bg-gradient-to-r from-[#0B1F3B] to-green-700 text-white px-10 py-20 flex items-center justify-between pt-[120px]">
+    <section className="max-w-[1400px] mx-auto bg-white px-10 py-24 flex items-center justify-between pt-[120px]">
 
+      {/* LEFT CONTENT */}
       <div>
-
-
-        <h1 className="text-5xl font-bold leading-tight bg-gradient-to-r from-white via-green-400 to-white bg-clip-text text-transparent">
+        <h1 className="text-5xl font-bold leading-tight text-gray-900">
           {t("hero.title")} <br />
-          <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">{t("hero.subtitle")} </span>
+          <span className="text-green-600">
+            {t("hero.subtitle")}
+          </span>
         </h1>
 
-        <p className="mt-6 text-gray-300 max-w-md">
-         {t("hero.desc")} 
+        <p className="mt-6 text-gray-600 max-w-md leading-relaxed">
+          {t("hero.desc")}
         </p>
 
-        <div className="mt-8 space-x-4">
-          <button className="bg-green-500 px-6 py-3 rounded-xl font-semibold hover:bg-green-600 transition">
-            {t("hero.button")} 
+        <div className="mt-8 flex gap-4">
+          <button className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition shadow-lg">
+            {t("hero.button")}
           </button>
 
-          <button className="border border-white px-6 py-3 rounded-xl hover:bg-white hover:text-black transition">
-           {t("hero.button1")} 
+          <button className="border border-green-600 text-green-600 px-6 py-3 rounded-xl hover:bg-green-600 hover:text-white transition">
+            {t("hero.button1")}
           </button>
         </div>
       </div>
 
-      <div className="bg-white/10 backdrop-blur-lg p-10 rounded-3xl shadow-2xl ">
-        <div className="w-full h-full bg-white rounded-2xl">
-          <img src="data:image/jpeg;base64,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" alt="" />
+      <div className="flex items-center justify-center ">
+        <div className="relative w-[420px] h-[260px] group">
+
+          {/* Orqa karta (oq marble) */}
+          <div className="absolute top-6 left-6 w-[380px] h-[220px] rounded-2xl z-100 
+                        overflow-hidden shadow-xl
+                        transition-all duration-500 
+                        group-hover:rotate-6 group-hover:-translate-y-2">
+
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200')",
+              }}
+            ></div>
+
+            <div className="relative p-6 flex justify-between items-start h-full">
+              <h2 className="text-gray-700 font-semibold text-lg">
+                Yuksalish Bank
+              </h2>
+              <Chip />
+            </div>
+          </div>
+
+          {/* Old karta (qora marble) */}
+          <div className="absolute w-[380px] h-[220px] rounded-2xl 
+                        overflow-hidden shadow-2xl cursor-pointer
+                        transition-all duration-500 
+                        group-hover:-translate-y-4 
+                        group-hover:rotate-3 
+                        group-hover:scale-105 bg-black">
+
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=1200')",
+              }}
+            ></div>
+
+            <div className="absolute inset-0 bg-black/40"></div>
+
+            <div className="relative p-6 flex flex-col justify-between h-full text-white">
+              <div className="flex justify-between items-start">
+                <h2 className="text-xl font-semibold tracking-wide">
+                  Yuksalish Bank
+                </h2>
+                <Chip />
+              </div>
+
+              <div>
+                <p className="text-sm opacity-80">CARD HOLDER</p>
+                <p className="text-lg tracking-widest">
+                  0000 0000 0000 0000
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
+
     </section>
   );
 }
