@@ -1,60 +1,54 @@
 {
-
-
   "services1": {
     "plasticCards": {
-      "title": "Plastic cards",
+      "title": "Plastic Cards",
       "desc": "Fast and secure plastic card services."
     },
     "loans": {
       "title": "Loans",
-      "desc": "Microloans with preferential interest rates and quick processing."
+      "desc": "Microloans with preferential rates and fast processing."
     },
     "deposits": {
       "title": "Deposits",
-      "desc": "Increase your funds safely with high returns."
+      "desc": "Reliable and high-yield growth of your funds."
     },
     "currency": {
       "title": "Currency",
-      "desc": "24/7 online currency exchange at the best rates."
+      "desc": "Online currency exchange 24/7 at the best rates."
     }
   },
   "buttons": {
-    "moreDetails": "More details →"
+    "moreDetails": "More Details →"
   },
-
-  "salom" :{
-   "home": "Our services"
+  "salom": {
+    "home": "Our Services"
   },
   "navbar": {
-    "home": "Home",
     "kredit": "Loan",
-
+    "home": "Home",
     "services": "Services",
-    "about": "About Us",
+    "about": "About",
     "contact": "Contact",
     "login": "Login"
   },
-  
   "stats": {
     "clients": "Clients",
     "branches": "Branches",
     "experience": "Years of Experience",
     "service": "Service"
   },
-
   "hero": {
-    "desc": "Build your financial future with confidence with Lodo Bank.",
-    "title": "Trust, Security,",
+    "desc": "Build your financial future with confidence together with Lodo Bank.",
+    "title": "Confidence, Security,",
     "subtitle": "Growth",
-    "button": "Open Account",
+    "button": "Open an Account",
     "button1": "Learn More"
   },
   "services": {
     "title": "Our Services",
     "card1": {
       "title": "Online Loan",
-      "desc": "Fast and convenient loan access"
+      "desc": "Ability to quickly and conveniently get a loan"
     },
     "card2": {
       "title": "Plastic Cards",
@@ -63,6 +57,38 @@
     "card3": {
       "title": "Money Transfers",
       "desc": "International and local transfers"
+    }
+  },
+  "translation": {
+    "send": "Send",
+    "fullName": "Full Name",
+    "region": "Region",
+    "city": "City",
+    "email": "Email",
+    "phone": "Phone",
+    "requestType": "Request Type",
+    "complaint": "Complaint",
+    "suggestion": "Suggestion",
+    "question": "Question",
+    "subjectType": "Subject Type",
+    "legal": "Legal Entity",
+    "physical": "Individual",
+    "message": "Message",
+    "agree": "I agree to the terms",
+    "alerts": {
+      "success": "Request successfully sent",
+      "error": "An error occurred",
+      "network": "Network error, please try again"
+    },
+    "errors": {
+      "fullNameWords": "Full Name must consist of 3 words",
+      "fullNameFormat": "Invalid Full Name format",
+      "region": "Region is required",
+      "city": "City is required",
+      "email": "Invalid email",
+      "phone": "Phone format: +998 XX XXX-XX-XX",
+      "message": "Message must be at least 10 characters",
+      "agree": "You must accept the terms"
     }
   },
   "footer": {

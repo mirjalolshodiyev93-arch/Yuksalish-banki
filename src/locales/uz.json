@@ -1,67 +1,99 @@
 {
   "services1": {
     "plasticCards": {
-      "title": "Plastik kartalar",
-      "desc": "Tez va xavfsiz plastik kartalar xizmatlari."
+      "title": "Пластиковые карты",
+      "desc": "Быстрые и безопасные услуги по пластиковым картам."
     },
     "loans": {
-      "title": "Kreditlar",
-      "desc": "Imtiyozli foiz stavkalari va tezkor rasmiylashtirish bilan mikroqarzlar."
+      "title": "Кредиты",
+      "desc": "Микрокредиты с льготными процентными ставками и быстрым оформлением."
     },
     "deposits": {
-      "title": "Omonatlar",
-      "desc": "Mablag'laringizni ishonchli va yuqori daromad bilan ko'paytiring."
+      "title": "Депозиты",
+      "desc": "Умножьте свои средства надежно и с высокой доходностью."
     },
     "currency": {
-      "title": "Valyuta",
-      "desc": "Eng foydali kurslarda 24/7 onlayn valyuta ayirboshlash xizmati."
+      "title": "Валюта",
+      "desc": "Онлайн обмен валют 24/7 по самым выгодным курсам."
     }
   },
   "buttons": {
-    "moreDetails": "Batafsil →"
+    "moreDetails": "Подробнее →"
   },
   "salom": {
-    "home": "Bizning xizmatlar"
+    "home": "Наши услуги"
   },
   "navbar": {
-    "home": "Bosh sahifa",
-    "services": "Xizmatlar",
-    "about": "Biz haqimizda",
-    "contact": "Aloqa",
-    "kredit":"Kredit",
-    "login": "Kirish"
+    "kredit": "Кредит",
+    "home": "Главная",
+    "services": "Услуги",
+    "about": "О нас",
+    "contact": "Контакты",
+    "login": "Вход"
   },
   "stats": {
-    "clients": "Mijozlar",
-    "branches": "Filiallar",
-    "experience": "Yillik tajriba",
-    "service": "Xizmat"
+    "clients": "Клиенты",
+    "branches": "Филиалы",
+    "experience": "Годовой опыт",
+    "service": "Обслуживание"
   },
   "hero": {
-    "desc": " Lodo Bank bilan moliyaviy kelajagingizni ishonch bilan quring.",
-    "title": " Ishonch, Xavfsizlik,",
-    "subtitle": "O‘sish",
-    "button": "Hisob ochish",
-    "button1": "  Batafsil"
+    "desc": "Стройте ваше финансовое будущее с уверенностью вместе с Лодо Банк.",
+    "title": "Уверенность, Безопасность,",
+    "subtitle": "Рост",
+    "button": "Открыть счёт",
+    "button1": "Подробнее"
   },
   "services": {
-    "title": "Bizning xizmatlar",
+    "title": "Наши услуги",
     "card1": {
-      "title": "Onlayn kredit",
-      "desc": "Tez va qulay kredit olish imkoniyati"
+      "title": "Онлайн кредит",
+      "desc": "Возможность быстро и удобно получить кредит"
     },
     "card2": {
-      "title": "Plastik kartalar",
-      "desc": "Visa va Mastercard kartalari"
+      "title": "Пластиковые карты",
+      "desc": "Карты Visa и Mastercard"
     },
     "card3": {
-      "title": "Pul o‘tkazmalari",
-      "desc": "Xalqaro va mahalliy o‘tkazmalar"
+      "title": "Денежные переводы",
+      "desc": "Международные и местные переводы"
     }
   },
-  "footer": {
-    "rights": "Barcha huquqlar himoyalangan",
-    "privacy": "Maxfiylik siyosati",
-    "terms": "Foydalanish shartlari"
+  "translation": {
+   "send": "Yuborish",
+  "fullName": "F.I.O",
+  "region": "Viloyat",
+  "city": "Shahar",
+  "email": "Email",
+  "phone": "Telefon",
+  "requestType": "Murojaat turi",
+  "complaint": "Shikoyat",
+  "suggestion": "Taklif",
+  "question": "Savol",
+  "subjectType": "Shaxs turi",
+  "legal": "Yuridik shaxs",
+  "physical": "Jismoniy shaxs",
+  "message": "Xabar",
+  "agree": "Shartlarni qabul qilaman",
+  "alerts": {
+    "success": "Murojaat muvaffaqiyatli yuborildi",
+    "error": "Xatolik yuz berdi",
+    "network": "Tarmoq xatosi, qayta urinib ko'ring"
+  },
+  "errors": {
+    "fullNameWords": "F.I.O 3 ta so'zdan iborat bo'lishi kerak",
+    "fullNameFormat": "F.I.O noto'g'ri formatda",
+    "region": "Viloyat kiritilishi shart",
+    "city": "Shahar kiritilishi shart",
+    "email": "Email noto'g'ri",
+    "phone": "Telefon formati: +998 XX XXX-XX-XX",
+    "message": "Xabar kamida 10 ta belgi bo'lishi kerak",
+    "agree": "Shartlarni qabul qilishingiz shart"
   }
-}
+  },
+  "footer": {
+    "rights": "Все права защищены",
+    "privacy": "Политика конфиденциальности",
+    "terms": "Условия использования"
+  }
+} 

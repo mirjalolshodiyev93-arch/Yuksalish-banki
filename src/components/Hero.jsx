@@ -62,14 +62,11 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center ">
+      <div className="flex items-center justify-center">
         <div className="relative w-[420px] h-[260px] group">
 
-          {/* Orqa karta (oq marble) */}
-          <div className="absolute top-6 left-6 w-[380px] h-[220px] rounded-2xl z-100 
-                        overflow-hidden shadow-xl
-                        transition-all duration-500 
-                        group-hover:rotate-6 group-hover:-translate-y-2">
+          {/* Orqa karta */}
+          <div className="absolute top-6 left-6 w-[380px] h-[220px] rounded-2xl overflow-hidden shadow-xl transition-all duration-500 ease-in-out group-hover:rotate-3">
 
             <div
               className="absolute inset-0 bg-cover bg-center"
@@ -87,22 +84,18 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Old karta (qora marble) */}
-          <div className="absolute w-[380px] h-[220px] rounded-2xl 
-                        overflow-hidden shadow-2xl cursor-pointer
-                        transition-all duration-500 
-                        group-hover:-translate-y-4 
-                        group-hover:rotate-3 
-                        group-hover:scale-105 bg-black">
+          {/* Old karta */}
+          {/* Old karta */}
+          <div className="absolute w-[380px] h-[220px] rounded-2xl overflow-hidden  cursor-pointer transition-all duration-500 ease-in-out group-hover:-rotate-3">
 
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=1200')",
-              }}
-            ></div>
+            {/* RASM */}
+            <img
+              src="/card.png"
+              alt="Card background"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
 
+            {/* Agar qoraytirish kerak bo‘lsa qoldirasan, kerak bo‘lmasa o‘chir */}
             <div className="absolute inset-0 bg-black/40"></div>
 
             <div className="relative p-6 flex flex-col justify-between h-full text-white">
