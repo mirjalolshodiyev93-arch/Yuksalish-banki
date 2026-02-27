@@ -189,8 +189,8 @@ ${t("agree")}: ${form.agree ? "Да" : "Нет"}
               <div>
                 <label className="block text-sm text-gray-600 mb-2">{t("translation.subjectType")}</label>
                 <select name="subjectType" value={form.subjectType} onChange={handleChange} className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-red-500">
-                  <option value="legal">{t("legal")}</option>
-                  <option value="physical">{t("physical")}</option>
+                  <option value="legal">{t("translation.legal")}</option>
+                  <option value="physical">{t("translation.physical")}</option>
                 </select>
               </div>
             </div>
