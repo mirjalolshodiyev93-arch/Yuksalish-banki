@@ -1,99 +1,99 @@
 {
   "services1": {
     "plasticCards": {
-      "title": "Пластиковые карты",
-      "desc": "Быстрые и безопасные услуги по пластиковым картам."
+      "title": "Plastik kartalar",
+      "desc": "Plastik kartalar bo‘yicha tez va xavfsiz xizmatlar."
     },
     "loans": {
-      "title": "Кредиты",
-      "desc": "Микрокредиты с льготными процентными ставками и быстрым оформлением."
+      "title": "Kreditlar",
+      "desc": "Imtiyozli foiz stavkalari va tez rasmiylashtirish bilan mikrokreditlar."
     },
     "deposits": {
-      "title": "Депозиты",
-      "desc": "Умножьте свои средства надежно и с высокой доходностью."
+      "title": "Omonat (Depozitlar)",
+      "desc": "Mablag‘laringizni ishonchli va yuqori daromad bilan ko‘paytiring."
     },
     "currency": {
-      "title": "Валюта",
-      "desc": "Онлайн обмен валют 24/7 по самым выгодным курсам."
+      "title": "Valyuta",
+      "desc": "24/7 onlayn valyuta ayirboshlash eng qulay kurslarda."
     }
   },
   "buttons": {
-    "moreDetails": "Подробнее →"
+    "moreDetails": "Batafsil →"
   },
   "salom": {
-    "home": "Наши услуги"
+    "home": "Bizning xizmatlar"
   },
   "navbar": {
-    "kredit": "Кредит",
-    "home": "Главная",
-    "services": "Услуги",
-    "about": "О нас",
-    "contact": "Контакты",
-    "login": "Вход"
+    "kredit": "Kredit",
+    "home": "Bosh sahifa",
+    "services": "Xizmatlar",
+    "about": "Biz haqimizda",
+    "contact": "Kontaktlar",
+    "login": "Kirish"
   },
   "stats": {
-    "clients": "Клиенты",
-    "branches": "Филиалы",
-    "experience": "Годовой опыт",
-    "service": "Обслуживание"
+    "clients": "Mijozlar",
+    "branches": "Filiallar",
+    "experience": "Yillik tajriba",
+    "service": "Xizmat"
   },
   "hero": {
-    "desc": "Стройте ваше финансовое будущее с уверенностью вместе с Лодо Банк.",
-    "title": "Уверенность, Безопасность,",
-    "subtitle": "Рост",
-    "button": "Открыть счёт",
-    "button1": "Подробнее"
+    "desc": "Lodo Bank bilan moliyaviy kelajagingizni ishonch bilan quring.",
+    "title": "Ishonch, Xavfsizlik,",
+    "subtitle": "Rivojlanish",
+    "button": "Hisob ochish",
+    "button1": "Batafsil"
   },
   "services": {
-    "title": "Наши услуги",
+    "title": "Bizning xizmatlar",
     "card1": {
-      "title": "Онлайн кредит",
-      "desc": "Возможность быстро и удобно получить кредит"
+      "title": "Onlayn kredit",
+      "desc": "Tez va qulay kredit olish imkoniyati"
     },
     "card2": {
-      "title": "Пластиковые карты",
-      "desc": "Карты Visa и Mastercard"
+      "title": "Plastik kartalar",
+      "desc": "Visa va Mastercard kartalari"
     },
     "card3": {
-      "title": "Денежные переводы",
-      "desc": "Международные и местные переводы"
+      "title": "Pul o‘tkazmalari",
+      "desc": "Xalqaro va mahalliy pul o‘tkazmalari"
     }
   },
   "translation": {
-   "send": "Yuborish",
-  "fullName": "F.I.O",
-  "region": "Viloyat",
-  "city": "Shahar",
-  "email": "Email",
-  "phone": "Telefon",
-  "requestType": "Murojaat turi",
-  "complaint": "Shikoyat",
-  "suggestion": "Taklif",
-  "question": "Savol",
-  "subjectType": "Shaxs turi",
-  "legal": "Yuridik shaxs",
-  "physical": "Jismoniy shaxs",
-  "message": "Xabar",
-  "agree": "Shartlarni qabul qilaman",
-  "alerts": {
-    "success": "Murojaat muvaffaqiyatli yuborildi",
-    "error": "Xatolik yuz berdi",
-    "network": "Tarmoq xatosi, qayta urinib ko'ring"
-  },
-  "errors": {
-    "fullNameWords": "F.I.O 3 ta so'zdan iborat bo'lishi kerak",
-    "fullNameFormat": "F.I.O noto'g'ri formatda",
-    "region": "Viloyat kiritilishi shart",
-    "city": "Shahar kiritilishi shart",
-    "email": "Email noto'g'ri",
-    "phone": "Telefon formati: +998 XX XXX-XX-XX",
-    "message": "Xabar kamida 10 ta belgi bo'lishi kerak",
-    "agree": "Shartlarni qabul qilishingiz shart"
-  }
+    "send": "Yuborish",
+    "fullName": "F.I.Sh",
+    "region": "Viloyat",
+    "city": "Shahar",
+    "email": "Email",
+    "phone": "Telefon",
+    "requestType": "Murojaat turi",
+    "complaint": "Shikoyat",
+    "suggestion": "Taklif",
+    "question": "Savol",
+    "subjectType": "Shaxs turi",
+    "legal": "Yuridik shaxs",
+    "physical": "Jismoniy shaxs",
+    "message": "Xabar",
+    "agree": "Shartlarni qabul qilaman",
+    "alerts": {
+      "success": "Murojaat muvaffaqiyatli yuborildi",
+      "error": "Xatolik yuz berdi",
+      "network": "Tarmoq xatosi, qayta urinib ko‘ring"
+    },
+    "errors": {
+      "fullNameWords": "F.I.Sh 3 ta so‘zdan iborat bo‘lishi kerak",
+      "fullNameFormat": "F.I.Sh noto‘g‘ri formatda",
+      "region": "Viloyat kiritilishi shart",
+      "city": "Shahar kiritilishi shart",
+      "email": "Email noto‘g‘ri",
+      "phone": "Telefon formati: +998 XX XXX-XX-XX",
+      "message": "Xabar kamida 10 ta belgidan iborat bo‘lishi kerak",
+      "agree": "Shartlarni qabul qilishingiz shart"
+    }
   },
   "footer": {
-    "rights": "Все права защищены",
-    "privacy": "Политика конфиденциальности",
-    "terms": "Условия использования"
+    "rights": "Barcha huquqlar himoyalangan",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari"
   }
-} 
+}

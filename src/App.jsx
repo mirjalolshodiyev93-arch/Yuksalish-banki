@@ -9,6 +9,7 @@ import Kredit from "./components/Kredit";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./components/404/NotFound";
 import AboutUs from "./components/AboutUs";
+import CardSection from "./components/CardSection";
 
 function App() {
   const location = useLocation();
@@ -29,6 +30,7 @@ function App() {
         <Route path="/kredit" element={<Kredit/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/aboutus" element={<AboutUs/>}/>
+         <Route path="/card" element={<CardSection/>}/>
 
         {/* 404 sahifa */}
         <Route path="/404" element={<NotFound />} />
