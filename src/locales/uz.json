@@ -95,5 +95,24 @@
     "rights": "Barcha huquqlar himoyalangan",
     "privacy": "Maxfiylik siyosati",
     "terms": "Foydalanish shartlari"
+  },"cards": {
+    "visa": {
+      "title": "VISA",
+      "description": "Karta tayyorlash muddati 3 ish kuni.",
+      "subDescription": "Minimal balans 10$",
+      "price": "BEPUL",
+      "priceLabel": "Kartani chiqarish",
+      "deposit": "10$",
+      "depositLabel": "Minimal balans"
+    },
+    "mastercard": {
+      "title": "MASTERCARD",
+      "description": "Kartani tayyorlash 5 ish kunigacha davom etadi.",
+      "subDescription": "Minimal balans 20$",
+      "price": "BEPUL",
+      "priceLabel": "Kartani chiqarish",
+      "deposit": "20$",
+      "depositLabel": "Minimal balans"
+    }
   }
 }

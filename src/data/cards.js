@@ -1,29 +1,28 @@
 import visaImg from "../assets/visa.png";
 import MASTERCARDImg from "../assets/MASTERCARD.png";
 
-export const cards = [
+
+export const cards = (t) => [
   {
     id: 1,
-    title: "VISA",
-    description:
-      "Срок изготовления карты составляет 3 банковских рабочих дня.",
-    subDescription: "Неснижаемый остаток составляет 10$",
-    price: "БЕСПЛАТНО",
-    priceLabel: "Выпуск карты",
-    deposit: "10$",
-    depositLabel: "Неснижаемый остаток",
-    image: visaImg,
+    title: t("cards.visa.title"),
+    description: t("cards.visa.description"),
+    subDescription: t("cards.visa.subDescription"),
+    price: t("cards.visa.price"),
+    priceLabel: t("cards.visa.priceLabel"),
+    deposit: t("cards.visa.deposit"),
+    depositLabel: t("cards.visa.depositLabel"),
+    image: visaImg
   },
   {
     id: 2,
-    title: "MASTERCARD",
-    description:
-      "Изготовление карты занимает до 5 рабочих дней.",
-    subDescription: "Неснижаемый остаток составляет 20$",
-    price: "БЕСПЛАТНО",
-    priceLabel: "Выпуск карты",
-    deposit: "20$",
-    depositLabel: "Неснижаемый остаток",
-    image: MASTERCARDImg,
-  },
+    title: t("cards.mastercard.title"),
+    description: t("cards.mastercard.description"),
+    subDescription: t("cards.mastercard.subDescription"),
+    price: t("cards.mastercard.price"),
+    priceLabel: t("cards.mastercard.priceLabel"),
+    deposit: t("cards.mastercard.deposit"),
+    depositLabel: t("cards.mastercard.depositLabel"),
+    image: MASTERCARDImg
+  }
 ];

@@ -2,23 +2,24 @@
   "services1": {
     "plasticCards": {
       "title": "Plastic Cards",
-      "desc": "Fast and secure plastic card services."
+      "desc": "Fast and secure services for plastic cards."
     },
     "loans": {
       "title": "Loans",
-      "desc": "Microloans with preferential rates and fast processing."
+      "desc": "Microloans with preferential interest rates and fast processing."
     },
     "deposits": {
       "title": "Deposits",
-      "desc": "Reliable and high-yield growth of your funds."
+      "desc": "Grow your funds reliably with high returns."
     },
     "currency": {
       "title": "Currency",
-      "desc": "Online currency exchange 24/7 at the best rates."
+      "desc": "24/7 online currency exchange at the most favorable rates."
     }
   },
   "buttons": {
-    "moreDetails": "More Details →"
+    "moreDetails": "More Details →",
+    "orderOnline": "Order Online"
   },
   "salom": {
     "home": "Our Services"
@@ -27,28 +28,28 @@
     "kredit": "Loan",
     "home": "Home",
     "services": "Services",
-    "about": "About",
-    "contact": "Contact",
+    "about": "About Us",
+    "contact": "Contacts",
     "login": "Login"
   },
   "stats": {
     "clients": "Clients",
     "branches": "Branches",
-    "experience": "Years of Experience",
+    "experience": "Years Experience",
     "service": "Service"
   },
   "hero": {
-    "desc": "Build your financial future with confidence together with Lodo Bank.",
-    "title": "Confidence, Security,",
+    "desc": "Build your financial future with confidence with Lodo Bank.",
+    "title": "Trust, Security,",
     "subtitle": "Growth",
-    "button": "Open an Account",
-    "button1": "Learn More"
+    "button": "Open Account",
+    "button1": "More"
   },
   "services": {
     "title": "Our Services",
     "card1": {
       "title": "Online Loan",
-      "desc": "Ability to quickly and conveniently get a loan"
+      "desc": "Opportunity to get a loan quickly and conveniently"
     },
     "card2": {
       "title": "Plastic Cards",
@@ -56,7 +57,7 @@
     },
     "card3": {
       "title": "Money Transfers",
-      "desc": "International and local transfers"
+      "desc": "International and local money transfers"
     }
   },
   "translation": {
@@ -72,22 +73,22 @@
     "question": "Question",
     "subjectType": "Subject Type",
     "legal": "Legal Entity",
-    "physical": "Individual",
+    "physical": "Physical Person",
     "message": "Message",
     "agree": "I agree to the terms",
     "alerts": {
-      "success": "Request successfully sent",
+      "success": "Request sent successfully",
       "error": "An error occurred",
       "network": "Network error, please try again"
     },
     "errors": {
-      "fullNameWords": "Full Name must consist of 3 words",
-      "fullNameFormat": "Invalid Full Name format",
+      "fullNameWords": "Full name must consist of 3 words",
+      "fullNameFormat": "Invalid full name format",
       "region": "Region is required",
       "city": "City is required",
       "email": "Invalid email",
       "phone": "Phone format: +998 XX XXX-XX-XX",
-      "message": "Message must be at least 10 characters",
+      "message": "Message must be at least 10 characters long",
       "agree": "You must accept the terms"
     }
   },
@@ -95,5 +96,25 @@
     "rights": "All rights reserved",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use"
+  },
+  "cards": {
+    "visa": {
+      "title": "VISA",
+      "description": "Card production time is 3 working days.",
+      "subDescription": "Minimum balance 10$",
+      "price": "FREE",
+      "priceLabel": "Card Issuance",
+      "deposit": "10$",
+      "depositLabel": "Min. balance"
+    },
+    "mastercard": {
+      "title": "MASTERCARD",
+      "description": "Card production takes up to 5 working days.",
+      "subDescription": "Minimum balance 20$",
+      "price": "FREE",
+      "priceLabel": "Card Issuance",
+      "deposit": "20$",
+      "depositLabel": "Min. balance"
+    }
   }
 }
