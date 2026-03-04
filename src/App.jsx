@@ -10,6 +10,9 @@ import Dashboard from "./pages/Dashboard";
 import NotFound from "./components/404/NotFound";
 import AboutUs from "./components/AboutUs";
 import CardSection from "./components/CardSection";
+import CurrencyExchangePage from "./components/CurrencyExchangePage";
+import Deposits from "./components/Deposits";
+import Deposits1 from "./components/OmonatOchish";
 
 function App() {
   const location = useLocation();
@@ -26,12 +29,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/register" element={<Register/>} />
+        <Route path="/salom" element={<CurrencyExchangePage/>} />
         <Route path="/contact" element={<Contacts/>}/>
         <Route path="/kredit" element={<Kredit/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/aboutus" element={<AboutUs/>}/>
          <Route path="/card" element={<CardSection/>}/>
-
+<Route path="/omonat" element={<Deposits/>}/>
+<Route path="/omonat/deposits" element={<Deposits1/>}/>
         {/* 404 sahifa */}
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate to="/404" replace />} />

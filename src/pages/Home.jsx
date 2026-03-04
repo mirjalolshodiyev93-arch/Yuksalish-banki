@@ -1,3 +1,4 @@
+import CurrencyExchangePage from "../components/CurrencyExchangePage";
 import Hero from "../components/Hero";
 import ServiceCard from "../components/ServiceCard";
 import Bank from "../components/skroll/Bank";
@@ -8,9 +9,10 @@ export default function Home() {
   return (
     <>
       <Hero  />
-      <Stats />
+      <Stats />                               
       <ServiceCard/>
  <Bank/>
+                       
     </>
   );
 }

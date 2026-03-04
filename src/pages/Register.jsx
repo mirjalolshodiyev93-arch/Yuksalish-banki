@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Register() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
 
   const [form, setForm] = useState({
@@ -19,7 +19,7 @@ export default function Register() {
 
   const [errors, setErrors] = useState({});
 
-  // KUCHAYTIRILGAN VALIDATSIYA
+  // VALIDATSIYA (JSON KALITLARIGA MOSLANGAN)
   const validateField = (name, value) => {
     let errorMsg = "";
     const cleanValue = typeof value === "string" ? value.trim() : value;
@@ -28,38 +28,37 @@ export default function Register() {
       case "fullName":
         const nameParts = cleanValue.split(/\s+/).filter(p => p.length > 0);
         const nameRegex = /^[a-zA-Zà-яÀ-ЯUzUzO'o'G'g'shchSHCHsS\s]+$/; 
-        if (!cleanValue) errorMsg = t("translation.errors.required");
-        else if (nameParts.length !== 3) errorMsg = t("translation.errors.fullNameThreeWords");
-        else if (!nameRegex.test(cleanValue)) errorMsg = t("translation.errors.onlyLetters");
-        else if (nameParts.some(p => p.length < 2)) errorMsg = t("translation.errors.tooShortName");
+        if (!cleanValue) errorMsg = t("translation.errors.fullNameFormat"); // "kiritilishi shart" ma'nosida
+        else if (nameParts.length !== 3) errorMsg = t("translation.errors.fullNameWords");
+        else if (!nameRegex.test(cleanValue)) errorMsg = t("translation.errors.fullNameFormat");
         break;
 
       case "email":
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!cleanValue) errorMsg = t("translation.errors.required");
-        else if (!emailRegex.test(cleanValue)) errorMsg = t("translation.errors.invalidEmail");
+        if (!cleanValue) errorMsg = t("translation.errors.email");
+        else if (!emailRegex.test(cleanValue)) errorMsg = t("translation.errors.email");
         break;
 
       case "phone":
         const phoneRegex = /^\+998 \d{2} \d{3}-\d{2}-\d{2}$/;
-        if (!cleanValue || cleanValue === "+998 ") errorMsg = t("translation.errors.required");
-        else if (!phoneRegex.test(cleanValue)) errorMsg = t("translation.errors.invalidPhone");
+        if (!cleanValue || cleanValue === "+998 ") errorMsg = t("translation.errors.phone");
+        else if (!phoneRegex.test(cleanValue)) errorMsg = t("translation.errors.phone");
         break;
 
       case "message":
-        if (!cleanValue) errorMsg = t("translation.errors.required");
-        else if (cleanValue.length < 20) errorMsg = t("translation.errors.tooShortMessage");
-        else if (cleanValue.length > 2000) errorMsg = t("translation.errors.tooLongMessage");
+        if (!cleanValue || cleanValue.length < 10) errorMsg = t("translation.errors.message");
         break;
 
       case "region":
+        if (!cleanValue) errorMsg = t("translation.errors.region");
+        break;
+
       case "city":
-        if (!cleanValue) errorMsg = t("translation.errors.required");
-        else if (cleanValue.length < 3) errorMsg = t("translation.errors.tooShortLocation");
+        if (!cleanValue) errorMsg = t("translation.errors.city");
         break;
 
       case "agree":
-        if (!value) errorMsg = t("translation.errors.mustAgree");
+        if (!value) errorMsg = t("translation.errors.agree");
         break;
 
       default:
@@ -72,7 +71,6 @@ export default function Register() {
     const { name, value, type, checked } = e.target;
     let fieldValue = type === "checkbox" ? checked : value;
 
-    // Telefon maskasi (avtomatik formatlash)
     if (name === "phone") {
       const numbers = value.replace(/\D/g, "").slice(3);
       fieldValue = "+998 ";
@@ -83,14 +81,13 @@ export default function Register() {
     }
 
     setForm({ ...form, [name]: fieldValue });
-    if (errors[name]) setErrors({ ...errors, [name]: "" }); // Xatoni real-vaqtda o'chirish
+    if (errors[name]) setErrors({ ...errors, [name]: "" });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
 
-    // To'liq tekshiruv
     Object.keys(form).forEach((key) => {
       const err = validateField(key, form[key]);
       if (err) newErrors[key] = err;
@@ -98,15 +95,11 @@ export default function Register() {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-      // Xato bor birinchi elementga fokus berish
-      const firstError = Object.keys(newErrors)[0];
-      document.getElementsByName(firstError)[0]?.focus();
       return;
     }
 
     setLoading(true);
 
-    // Ma'lumotlarni tozalash va formatlash
     const sanitizedFullName = form.fullName
       .trim()
       .split(/\s+/)
@@ -147,7 +140,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12 font-sans">
       <div className="w-full max-w-4xl bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
         <div className="bg-red-600 p-6 text-center">
           <h2 className="text-2xl font-bold text-white">{t("translation.send")}</h2>
@@ -163,7 +156,7 @@ export default function Register() {
               value={form.fullName} 
               onChange={handleChange} 
               placeholder="Familiya Ism Sharif"
-              className={`w-full border-2 p-3 rounded-xl outline-none transition-all ${errors.fullName ? "border-red-500 bg-red-50" : "border-gray-200 focus:border-red-500"}`} 
+              className={`w-full border-2 p-3 rounded-xl outline-none transition-all text-gray-900 placeholder-gray-400 ${errors.fullName ? "border-red-500 bg-red-50" : "border-gray-200 focus:border-red-500"}`} 
             />
             {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName}</p>}
           </div>
@@ -171,12 +164,24 @@ export default function Register() {
           <div className="grid md:grid-cols-2 gap-5">
             <div className="space-y-1">
               <label className="text-sm font-semibold text-gray-700">{t("translation.region")}</label>
-              <input name="region" value={form.region} onChange={handleChange} className={`w-full border-2 p-3 rounded-xl outline-none ${errors.region ? "border-red-500" : "border-gray-200 focus:border-red-500"}`} />
+              <input 
+                name="region" 
+                value={form.region} 
+                onChange={handleChange} 
+                placeholder={t("translation.region")}
+                className={`w-full border-2 p-3 rounded-xl outline-none text-gray-900 placeholder-gray-400 ${errors.region ? "border-red-500" : "border-gray-200 focus:border-red-500"}`} 
+              />
               {errors.region && <p className="text-red-500 text-xs">{errors.region}</p>}
             </div>
             <div className="space-y-1">
               <label className="text-sm font-semibold text-gray-700">{t("translation.city")}</label>
-              <input name="city" value={form.city} onChange={handleChange} className={`w-full border-2 p-3 rounded-xl outline-none ${errors.city ? "border-red-500" : "border-gray-200 focus:border-red-500"}`} />
+              <input 
+                name="city" 
+                value={form.city} 
+                onChange={handleChange} 
+                placeholder={t("translation.city")}
+                className={`w-full border-2 p-3 rounded-xl outline-none text-gray-900 placeholder-gray-400 ${errors.city ? "border-red-500" : "border-gray-200 focus:border-red-500"}`} 
+              />
               {errors.city && <p className="text-red-500 text-xs">{errors.city}</p>}
             </div>
           </div>
@@ -184,12 +189,24 @@ export default function Register() {
           <div className="grid md:grid-cols-2 gap-5">
             <div className="space-y-1">
               <label className="text-sm font-semibold text-gray-700">{t("translation.email")}</label>
-              <input name="email" value={form.email} onChange={handleChange} className={`w-full border-2 p-3 rounded-xl outline-none ${errors.email ? "border-red-500" : "border-gray-200 focus:border-red-500"}`} />
+              <input 
+                name="email" 
+                value={form.email} 
+                onChange={handleChange} 
+                placeholder="example@mail.com"
+                className={`w-full border-2 p-3 rounded-xl outline-none text-gray-900 placeholder-gray-400 ${errors.email ? "border-red-500" : "border-gray-200 focus:border-red-500"}`} 
+              />
               {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
             </div>
             <div className="space-y-1">
               <label className="text-sm font-semibold text-gray-700">{t("translation.phone")}</label>
-              <input name="phone" value={form.phone} onChange={handleChange} maxLength="17" className={`w-full border-2 p-3 rounded-xl outline-none ${errors.phone ? "border-red-500" : "border-gray-200 focus:border-red-500"}`} />
+              <input 
+                name="phone" 
+                value={form.phone} 
+                onChange={handleChange} 
+                maxLength="17" 
+                className={`w-full border-2 p-3 rounded-xl outline-none text-gray-900 ${errors.phone ? "border-red-500" : "border-gray-200 focus:border-red-500"}`} 
+              />
               {errors.phone && <p className="text-red-500 text-xs">{errors.phone}</p>}
             </div>
           </div>
@@ -201,7 +218,8 @@ export default function Register() {
               rows="4" 
               value={form.message} 
               onChange={handleChange} 
-              className={`w-full border-2 p-3 rounded-xl outline-none ${errors.message ? "border-red-500" : "border-gray-200 focus:border-red-500"}`}
+              placeholder="..."
+              className={`w-full border-2 p-3 rounded-xl outline-none text-gray-900 placeholder-gray-400 ${errors.message ? "border-red-500" : "border-gray-200 focus:border-red-500"}`}
             ></textarea>
             {errors.message && <p className="text-red-500 text-xs">{errors.message}</p>}
           </div>
@@ -217,7 +235,7 @@ export default function Register() {
           <button 
             type="submit" 
             disabled={loading}
-            className={`w-full py-4 rounded-xl text-white font-bold text-lg transition-all ${loading ? "bg-gray-400" : "bg-red-600 hover:bg-red-700 shadow-lg hover:shadow-red-200"}`}
+            className={`w-full py-4 rounded-xl text-white font-bold text-lg transition-all ${loading ? "bg-gray-400" : "bg-red-600 hover:bg-red-700 shadow-lg"}`}
           >
             {loading ? "..." : t("translation.send")}
           </button>

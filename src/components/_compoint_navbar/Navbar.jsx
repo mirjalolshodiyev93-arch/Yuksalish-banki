@@ -10,7 +10,7 @@ export default function Navbar() {
   const [moreOpen, setMoreOpen] = useState(false);
   const { t } = useTranslation();
 
-  // NAV ITEMS (4 tadan ko‘p bo‘lsa Eщё ichiga tushadi)
+  // Barcha menyu elementlari
   const navItems = [
     "home",
     "services",
@@ -33,6 +33,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    // Menyu ochiqligida skrollni to'xtatish
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
 
@@ -60,7 +61,6 @@ export default function Navbar() {
 
           {/* DESKTOP LINKS */}
           <div className="hidden md:flex gap-6 lg:gap-8 items-center text-gray-300 font-medium uppercase text-[11px] tracking-[2px] relative">
-            
             {visibleItems.map((item) => (
               <Link
                 key={item}
@@ -77,13 +77,13 @@ export default function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setMoreOpen(!moreOpen)}
-                  className="hover:text-white transition-colors duration-300"
+                  className="hover:text-white transition-colors duration-300 flex items-center gap-1"
                 >
-                  Eщё ▾
+                  {t("navbar.more") || "Eщё"} ▾
                 </button>
 
                 {moreOpen && (
-                  <div className="absolute top-full right-0 mt-3 bg-[#1a1a1a] shadow-2xl rounded-lg py-3 w-[180px] animate-fadeIn">
+                  <div className="absolute top-full right-0 mt-3 bg-[#1a1a1a] shadow-2xl rounded-lg py-3 w-[180px] border border-white/10 animate-fadeIn">
                     {hiddenItems.map((item) => (
                       <Link
                         key={item}
@@ -116,16 +116,69 @@ export default function Navbar() {
               <LanguageDetector />
             </div>
 
-            {/* MOBILE BUTTON */}
+            {/* MOBILE HAMBURGER BUTTON */}
             <button
               onClick={() => setMenuOpen(true)}
-              className="md:hidden p-2 text-white"
+              className="md:hidden p-2 text-white text-2xl focus:outline-none"
             >
               ☰
             </button>
           </div>
         </div>
       </nav>
+
+      {/* MOBILE MENU SIDEBAR (OVERLAY) */}
+      <div
+        className={`fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setMenuOpen(false)}
+      >
+        {/* SIDEBAR CONTENT */}
+        <div
+          className={`fixed top-0 right-0 h-full w-[280px] bg-[#1a1a1a] shadow-2xl p-6 transition-transform duration-500 ease-in-out ${
+            menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+          onClick={(e) => e.stopPropagation()} // Ichini bossa yopilmasligi uchun
+        >
+          <div className="flex justify-between items-center mb-10">
+            <h2 className="text-white font-bold tracking-widest uppercase">Menu</h2>
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="text-white text-3xl focus:outline-none"
+            >
+              &times;
+            </button>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            {navItems.map((item) => (
+              <Link
+                key={item}
+                to={item === "home" ? "/" : `/${item}`}
+                onClick={() => setMenuOpen(false)}
+                className="text-gray-300 text-lg font-medium hover:text-blue-500 transition-colors uppercase tracking-widest"
+              >
+                {t(`navbar.${item}`)}
+              </Link>
+            ))}
+            
+            <hr className="border-white/10 my-2" />
+
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <span className="text-gray-400 text-sm">Til / Language</span>
+                <LanguageDetector />
+              </div>
+              <Link to="/register" onClick={() => setMenuOpen(false)}>
+                <button className="w-full py-3 bg-blue-600 text-white rounded-xl font-bold shadow-lg shadow-blue-900/20 active:scale-95 transition-transform">
+                  {t("navbar.login")}
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

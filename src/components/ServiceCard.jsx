@@ -13,22 +13,26 @@ export default function ServicesData() {
       icon: <CreditCard size={28} />,
       title: t("services1.plasticCards.title"),
       desc: t("services1.plasticCards.desc"),
+       link:"/card"
     },
     {
       icon: <Landmark size={28} />,
       title: t("services1.loans.title"),
       desc: t("services1.loans.desc"),
       active: true,
+       link:"/kredit"
     },
     {
       icon: <PiggyBank size={28} />,
       title: t("services1.deposits.title"),
       desc: t("services1.deposits.desc"),
+       link:"/omonat"
     },
     {
       icon: <RefreshCcw size={28} />,
       title: t("services1.currency.title"),
       desc: t("services1.currency.desc"),
+      link:"/salom"
     },
   ];
 
@@ -61,7 +65,8 @@ export default function ServicesData() {
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
           {services.map((item, index) => (
-            <div
+            <div 
+          onClick={() => item.link && navigate(item.link)}
               key={index}
               className={`p-6 sm:p-8 rounded-2xl border transition-all duration-300 transform hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-lg sm:hover:shadow-xl ${
                 item.active
