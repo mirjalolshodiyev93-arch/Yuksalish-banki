@@ -13,6 +13,10 @@ import CardSection from "./components/CardSection";
 import CurrencyExchangePage from "./components/CurrencyExchangePage";
 import Deposits from "./components/Deposits";
 import Deposits1 from "./components/OmonatOchish";
+import USDPage from "./components/404/USDPage";
+import EURPage from "./components/404/EURPage";
+import GBPPage from "./components/404/GBPPage";
+import RUBPage from "./components/404/RUBPage";
 
 function App() {
   const location = useLocation();
@@ -30,6 +34,10 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/register" element={<Register/>} />
         <Route path="/salom" element={<CurrencyExchangePage/>} />
+        <Route path="/salom/usd" element={<USDPage/>} />
+         <Route path="/salom/eur" element={<EURPage/>} />
+         <Route path="/salom/gbp" element={<GBPPage/>} />
+           <Route path="/salom/rub" element={<RUBPage/>} />
         <Route path="/contact" element={<Contacts/>}/>
         <Route path="/kredit" element={<Kredit/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
