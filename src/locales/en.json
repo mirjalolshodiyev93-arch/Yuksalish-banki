@@ -238,6 +238,40 @@
       "10y": "10 years",
       "3y": "3 years"
     }
+  },
+
+  "about": {
+    "badge": "Future Bank",
+    "heroTitle": "Yuksalish Bank",
+    "heroSubtitle": "A NEW ERA",
+    "heroDesc": "We are not just a bank, we are your trusted partner on the path to financial success. Innovative solutions and security are our core principles.",
+    "btnMore": "Learn More",
+    "stats": {
+      "clients": "Our Clients",
+      "experience": "Experience",
+      "branches": "Branches"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "desc": "Creating a convenient and modern financial ecosystem with an individual approach for every client."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "desc": "To become the most innovative and trusted digital banking brand in Central Asia."
+    },
+    "team": {
+      "title": "Management Team",
+      "roles": {
+        "founder": "Founder & Chairman",
+        "ceo": "Chief Executive Officer (CEO)",
+        "cfo": "Chief Financial Officer (CFO)"
+      }
+    },
+    "cta": {
+      "title": "Have Questions?",
+      "desc": "Our specialists are ready to assist you. Contact us now and take advantage of our services.",
+      "btn": "Contact Us"
+    }
   }
 
 }

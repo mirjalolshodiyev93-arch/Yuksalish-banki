@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import logo from "../../../public/logo.png";
+import logo from "../../../public/Logo.png";
 import LanguageDetector from "./en_uz";
 
 export default function Navbar() {
@@ -10,7 +10,6 @@ export default function Navbar() {
   const [moreOpen, setMoreOpen] = useState(false);
   const { t } = useTranslation();
 
-  // Barcha menyu elementlari
   const navItems = [
     "home",
     "services",
@@ -26,14 +25,13 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    // Menyu ochiqligida skrollni to'xtatish
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
 
@@ -42,8 +40,8 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
           scrolled
-            ? "h-[70px] bg-[#121212]/95 backdrop-blur-md shadow-2xl"
-            : "h-[100px] bg-[#1a1a1a]"
+            ? "h-[75px] bg-white/70 backdrop-blur-xl shadow-xl border-b border-white/20"
+            : "h-[100px] bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600"
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-8 h-full flex justify-between items-center">
@@ -53,42 +51,46 @@ export default function Navbar() {
             <img
               src={logo}
               alt="Logo"
-              className={`transition-all duration-500 brightness-0 invert ${
-                scrolled ? "w-[100px] h-[45px]" : "w-[130px] h-[60px]"
+              className={`transition-all duration-500 ${
+                scrolled
+                  ? "w-[100px] h-[45px]"
+                  : "w-[130px] h-[100px] "
               }`}
             />
           </Link>
 
           {/* DESKTOP LINKS */}
-          <div className="hidden md:flex gap-6 lg:gap-8 items-center text-gray-300 font-medium uppercase text-[11px] tracking-[2px] relative">
+          <div className={`hidden md:flex gap-8 items-center font-medium uppercase text-[11px] tracking-[2px] ${
+            scrolled ? "text-gray-700" : "text-white"
+          }`}>
             {visibleItems.map((item) => (
               <Link
                 key={item}
                 to={item === "home" ? "/" : `/${item}`}
-                className="hover:text-white transition-colors duration-300 relative group"
+                className="relative group transition-all duration-300"
               >
                 {t(`navbar.${item}`)}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
 
-            {/* MORE DROPDOWN */}
+            {/* MORE */}
             {hiddenItems.length > 0 && (
               <div className="relative">
                 <button
                   onClick={() => setMoreOpen(!moreOpen)}
-                  className="hover:text-white transition-colors duration-300 flex items-center gap-1"
+                  className="flex items-center gap-1"
                 >
-                  {t("navbar.more") || "Eщё"} ▾
+                  {t("navbar.more") || "More"} ▾
                 </button>
 
                 {moreOpen && (
-                  <div className="absolute top-full right-0 mt-3 bg-[#1a1a1a] shadow-2xl rounded-lg py-3 w-[180px] border border-white/10 animate-fadeIn">
+                  <div className="absolute top-full right-0 mt-3 bg-lime-400 backdrop-blur-xl shadow-2xl rounded-xl py-3 w-[190px] border border-white/30">
                     {hiddenItems.map((item) => (
                       <Link
                         key={item}
                         to={`/${item}`}
-                        className="block px-4 py-2 hover:bg-white/5 transition-colors"
+                        className="block px-4 py-2 hover:bg-green-500 transition-colors"
                         onClick={() => setMoreOpen(false)}
                       >
                         {t(`navbar.${item}`)}
@@ -104,22 +106,27 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link to="/register" className="hidden sm:block">
               <button
-                className={`transition-all duration-500 border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white rounded-lg font-semibold ${
-                  scrolled ? "px-4 py-1.5 text-xs" : "px-6 py-2.5 text-sm"
+                className={`transition-all duration-500 rounded-xl font-semibold shadow-lg ${
+                  scrolled
+                    ? "px-5 py-2 text-sm bg-gradient-to-r from-emerald-500 to-green-600 text-white hover:scale-105"
+                    : "px-6 py-2.5 text-sm bg-white text-emerald-600 hover:bg-emerald-50"
                 }`}
               >
                 {t("navbar.login")}
               </button>
             </Link>
 
-            <div className="hidden md:block scale-90">
+            <div className={`hidden md:block scale-90 ${
+              scrolled ? "" : "text-white"
+            }`}>
               <LanguageDetector />
             </div>
 
-            {/* MOBILE HAMBURGER BUTTON */}
             <button
               onClick={() => setMenuOpen(true)}
-              className="md:hidden p-2 text-white text-2xl focus:outline-none"
+              className={`md:hidden p-2 text-2xl ${
+                scrolled ? "text-emerald-700" : "text-white"
+              }`}
             >
               ☰
             </button>
@@ -127,25 +134,26 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBILE MENU SIDEBAR (OVERLAY) */}
+      {/* MOBILE MENU GLASS */}
       <div
-        className={`fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
           menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={() => setMenuOpen(false)}
       >
-        {/* SIDEBAR CONTENT */}
         <div
-          className={`fixed top-0 right-0 h-full w-[280px] bg-[#1a1a1a] shadow-2xl p-6 transition-transform duration-500 ease-in-out ${
+          className={`fixed top-0 right-0 h-full w-[280px] bg-white/80 backdrop-blur-2xl shadow-2xl p-6 transition-transform duration-500 ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
-          onClick={(e) => e.stopPropagation()} // Ichini bossa yopilmasligi uchun
+          onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center mb-10">
-            <h2 className="text-white font-bold tracking-widest uppercase">Menu</h2>
+            <h2 className="text-emerald-600 font-bold tracking-widest uppercase">
+              Menu
+            </h2>
             <button
               onClick={() => setMenuOpen(false)}
-              className="text-white text-3xl focus:outline-none"
+              className="text-gray-700 text-3xl"
             >
               &times;
             </button>
@@ -157,21 +165,22 @@ export default function Navbar() {
                 key={item}
                 to={item === "home" ? "/" : `/${item}`}
                 onClick={() => setMenuOpen(false)}
-                className="text-gray-300 text-lg font-medium hover:text-blue-500 transition-colors uppercase tracking-widest"
+                className="text-gray-700 text-lg font-medium hover:text-emerald-600 transition-colors uppercase tracking-widest"
               >
                 {t(`navbar.${item}`)}
               </Link>
             ))}
-            
-            <hr className="border-white/10 my-2" />
+
+            <hr className="border-gray-200 my-2" />
 
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
-                <span className="text-gray-400 text-sm">Til / Language</span>
+                <span className="text-gray-500 text-sm">Til</span>
                 <LanguageDetector />
               </div>
+
               <Link to="/register" onClick={() => setMenuOpen(false)}>
-                <button className="w-full py-3 bg-blue-600 text-white rounded-xl font-bold shadow-lg shadow-blue-900/20 active:scale-95 transition-transform">
+                <button className="w-full py-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-transform">
                   {t("navbar.login")}
                 </button>
               </Link>

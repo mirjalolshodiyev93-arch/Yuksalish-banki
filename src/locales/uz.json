@@ -24,12 +24,12 @@
     "home": "Bizning xizmatlar"
   },
   "navbar": {
-    "more":"Yana",
+    "more": "Yana",
     "kredit": "Kredit",
     "home": "Bosh sahifa",
     "aboutus": "Biz haqimizda",
-  "dashboard": "Dashboard",
-  "card": "Karta",
+    "dashboard": "Dashboard",
+    "card": "Karta",
     "services": "Xizmatlar",
     "about": "Biz haqimizda",
     "contact": "Kontaktlar",
@@ -99,7 +99,8 @@
     "rights": "Barcha huquqlar himoyalangan",
     "privacy": "Maxfiylik siyosati",
     "terms": "Foydalanish shartlari"
-  },"cards": {
+  },
+  "cards": {
     "visa": {
       "title": "VISA",
       "description": "Karta tayyorlash muddati 3 ish kuni.",
@@ -118,64 +119,87 @@
       "deposit": "20$",
       "depositLabel": "Minimal balans"
     }
-  },"timeline": {
+  },
+  "timeline": {
     "badge": "Tarixiy yo'l",
     "title_part1": "Muvaffaqiyat ",
     "title_brand": "Banki",
     "title_part2": " sari",
     "data": [
-      { "year": "2003", "title": "Tamal toshi", "desc": "Bank o'z faoliyatini boshlab, ilk mijozlariga eshiklarini ochdi." },
-      { "year": "2008", "title": "Milliy qamrov", "desc": "Respublika bo'ylab kengayish davri boshlandi va filiallar tarmog'i 50 taga yetdi." },
-      { "year": "2012", "title": "Raqamli transformatsiya", "desc": "Innovatsion banking xizmatlari joriy etilib, ilk bor onlayn tranzaksiyalar yo'lga qo'yildi." },
-      { "year": "2017", "title": "Muvaffaqiyat cho'qqisi", "desc": "Mijozlarimiz soni 1 milliondan oshdi. Biz xalqaro e'tirofga sazovor bo'ldik." },
-      { "year": "2021", "title": "Intellektual bank", "desc": "Sun'iy intellekt va Big Data tahlili asosida mijozlarga shaxsiy yondashuv boshlandi." },
-      { "year": "2024", "title": "Kelajak banki", "desc": "Bank ekotizimi yaratildi - 2M+ mijoz va to'liq raqamli moliya dunyosi." }
+      {
+        "year": "2003",
+        "title": "Tamal toshi",
+        "desc": "Bank o'z faoliyatini boshlab, ilk mijozlariga eshiklarini ochdi."
+      },
+      {
+        "year": "2008",
+        "title": "Milliy qamrov",
+        "desc": "Respublika bo'ylab kengayish davri boshlandi va filiallar tarmog'i 50 taga yetdi."
+      },
+      {
+        "year": "2012",
+        "title": "Raqamli transformatsiya",
+        "desc": "Innovatsion banking xizmatlari joriy etilib, ilk bor onlayn tranzaksiyalar yo'lga qo'yildi."
+      },
+      {
+        "year": "2017",
+        "title": "Muvaffaqiyat cho'qqisi",
+        "desc": "Mijozlarimiz soni 1 milliondan oshdi. Biz xalqaro e'tirofga sazovor bo'ldik."
+      },
+      {
+        "year": "2021",
+        "title": "Intellektual bank",
+        "desc": "Sun'iy intellekt va Big Data tahlili asosida mijozlarga shaxsiy yondashuv boshlandi."
+      },
+      {
+        "year": "2024",
+        "title": "Kelajak banki",
+        "desc": "Bank ekotizimi yaratildi - 2M+ mijoz va to'liq raqamli moliya dunyosi."
+      }
     ]
   },
-  
-    "ss1":{
-      "id": 1,
-      "title": "Plastik kartalar",
-      "desc": "Visa / Mastercard / Humo kartalari",
-      "btn": "Batafsil"
-    },
-    "ss2":{
-      "id": 2,
-      "title": "Kreditlar",
-      "desc": "Imtiyozli foiz stavkalari",
-      "btn": "Ariza topshirish"
-    },
-    "ss3":{
-      "id": 3,
-      "title": "Omonat",
-      "desc": "Yuqori daromadli omonatlar",
-      "btn": "Hisob ochish"
-    },
-    "ss4":{
-      "id": 4,
-      "title": "Biznes xizmatlari",
-      "desc": "Korporativ mijozlar uchun",
-      "btn": "Batafsil"
-    },
-    "ss5":{
-      "id": 5,
-      "title": "Valyuta ayirboshlash",
-      "desc": "24/7 onlayn ayirboshlash",
-      "btn": "Kurslarni ko‘rish"
-    },
-    "ss6":{
-      "id": 6,
-      "title": "Internet Banking",
-      "desc": "Mobil va web banking",
-      "btn": "Ro‘yxatdan o‘tish"
-    },
-   "xizmatlar":{
-     "calc_title":"Hisoblaymiz sizning daromadingiz",
-    "calc_total":"Muddat oxiridagi summa",
-    "calc_profit":"Sof foyda",
-    "calc_amount":"Investitsiya summasi"
-
-   },
+  "ss1": {
+    "id": 1,
+    "title": "Plastik kartalar",
+    "desc": "Visa / Mastercard / Humo kartalari",
+    "btn": "Batafsil"
+  },
+  "ss2": {
+    "id": 2,
+    "title": "Kreditlar",
+    "desc": "Imtiyozli foiz stavkalari",
+    "btn": "Ariza topshirish"
+  },
+  "ss3": {
+    "id": 3,
+    "title": "Omonat",
+    "desc": "Yuqori daromadli omonatlar",
+    "btn": "Hisob ochish"
+  },
+  "ss4": {
+    "id": 4,
+    "title": "Biznes xizmatlari",
+    "desc": "Korporativ mijozlar uchun",
+    "btn": "Batafsil"
+  },
+  "ss5": {
+    "id": 5,
+    "title": "Valyuta ayirboshlash",
+    "desc": "24/7 onlayn ayirboshlash",
+    "btn": "Kurslarni ko‘rish"
+  },
+  "ss6": {
+    "id": 6,
+    "title": "Internet Banking",
+    "desc": "Mobil va web banking",
+    "btn": "Ro‘yxatdan o‘tish"
+  },
+  "xizmatlar": {
+    "calc_title": "Hisoblaymiz sizning daromadingiz",
+    "calc_total": "Muddat oxiridagi summa",
+    "calc_profit": "Sof foyda",
+    "calc_amount": "Investitsiya summasi"
+  },
   "contacts": {
     "title": "Kontaktlar",
     "subtitle": "Biz bilan o'zingizga qulay usulda bog'laning. Biz har doim yordamga tayyormiz.",
@@ -193,8 +217,7 @@
     "message_label": "Xabaringiz",
     "message_placeholder": "Xabaringizni shu yerga yozing...",
     "send_btn": "Xabarni yuborish"
-  
-},
+  },
   "kredit": {
     "hero_title": "Tez va Ishonchli Kredit Xizmati",
     "hero_subtitle": "Eng qulay foizlar va tezkor tasdiqlash.",
@@ -236,6 +259,38 @@
       "10y": "10 yil",
       "3y": "3 yil"
     }
+  },
+  "about": {
+    "badge": "Kelejak Banki",
+    "heroTitle": "Yuksalish Bank",
+    "heroSubtitle": "BILAN YANGI DAVR",
+    "heroDesc": "Biz faqat bank emasmiz, biz sizning moliyaviy muvaffaqiyatingiz yo'lidagi ishonchli hamkoringizmiz. Innovatsion yechimlar va xavfsizlik — bizning bosh tamoyilimiz.",
+    "btnMore": "Batafsil",
+    "stats": {
+      "clients": "Mijozlarimiz",
+      "experience": "Tajriba",
+      "branches": "Filiallar"
+    },
+    "mission": {
+      "title": "Bizning Missiyamiz",
+      "desc": "Har bir mijoz uchun individual yondashuv orqali eng qulay va zamonaviy moliyaviy ekotizimni yaratish."
+    },
+    "vision": {
+      "title": "Bizning Vizyonimiz",
+      "desc": "Markaziy Osiyoda raqamli bank xizmatlari bo'yicha eng innovatsion va ishonchli brendga aylanish."
+    },
+    "team": {
+      "title": "Rahbariyat Jamoasi",
+      "roles": {
+        "founder": "Asoschi & Rais",
+        "ceo": "Bosh Direktor (CEO)",
+        "cfo": "Moliya Direktori (CFO)"
+      }
+    },
+    "cta": {
+      "title": "Savollaringiz bormi?",
+      "desc": "Mutaxassislarimiz sizga yordam berishga tayyor. Hoziroq bog'laning va xizmatlarimizdan foydalaning.",
+      "btn": "Bog'lanish"
+    }
   }
-
 }
