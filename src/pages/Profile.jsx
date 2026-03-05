@@ -9,6 +9,7 @@ export default function Profile() {
 
   return (
     <div>
+      
       {/* Profil header */}
           <div className="flex items-center mb-8">
         <img
