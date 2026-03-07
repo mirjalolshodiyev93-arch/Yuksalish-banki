@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Navbar from "./components/_compoint_navbar/Navbar";
 import Footer from "./components/Footer";
-import ChatBot from "./components/skroll/ChatBot";
+
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Register from "./pages/Register";
@@ -73,7 +73,7 @@ function App() {
         </Routes>
 
         {/* ChatBot va Footer faqat 404 bo'lmaganida */}
-        {!isNotFound && <ChatBot />}
+     
         {!isNotFound && <Footer />}
       </UserProvider>
     </ErrorBoundary>

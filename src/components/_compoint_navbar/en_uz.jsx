@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-
+     
 export default function LanguageDetector() {
   const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
